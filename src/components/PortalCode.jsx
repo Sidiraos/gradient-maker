@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState , useEffect} from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -10,6 +10,14 @@ const PortalCode = ({onClose , style}) => {
   const [text , setText] = useState("Copy")
   const valuesCode = Object.values(style).join("")
   const code = "background-image : " + valuesCode
+
+  useEffect(() => {
+    document.body.style.overflowY = 'hidden';
+
+    return () => {
+      document.body.style.overflowY = 'visible';
+    }
+  })
   const handleCopy = () => {
     if(isCopied) return
     if(!isCopied){

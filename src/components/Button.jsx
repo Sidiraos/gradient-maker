@@ -7,10 +7,8 @@ import { v4 as uuidv4 } from 'uuid';
 const Button = ({ type , selectedColorId , setSelectedId }) => {
 	const dispatch = useDispatch();
     const colors = useSelector((state) => state.gradientValues.colors);
-    const position = colors[colors.length -1].position + 5.5;
-    // console.log(position)
-    // console.log(selectedColorId)
-    // console.log(colors[colors.length-1].id)
+    const position = colors[colors.length -1].position  * 0.1 + colors[colors.length -1].position;
+    // console.log(colors[colors.length-1].position)
 	const handleClick = () => {
 		if (type === '+') {
             if(colors.length < 5){

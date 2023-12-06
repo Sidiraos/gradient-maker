@@ -27,26 +27,15 @@ const initialState = {
         } ,
         removeColor : (state , action) => {
             state.colors.pop()
-            // state.colors = state.colors.filter(color => color.id !== action.payload)
-        } ,
+        },
         changeDegree : (state , action) => {
             state.globalDegree = Math.floor(action.payload * 360 / 100)
         } ,
         changePosition : (state , action) => {
-            state.colors = state.colors.map(color => {
-                if(color.id === action.payload.id){
-                    color.position = action.payload.position
-                }
-                return color
-            })
+            state.colors.find(color => color.id === action.payload.id).position = action.payload.position
         } ,
         handleChange : (state , action) => {
-            state.colors = state.colors.map(color => {
-                if(color.id === action.payload.id){
-                    color.color = action.payload.color
-                }
-                return color
-            })
+            state.colors.find(color => color.id === action.payload.id).color = action.payload.color
         }
     }
 })

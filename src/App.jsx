@@ -59,12 +59,12 @@ function App() {
 
                 <div className="flex flex-col gap-4"> 
                    <label className="" htmlFor="position">Color's position</label>
-                   <input type="range" id="position" value={currentPosition} onChange={(e) => dispatch(changePosition({id : selectedColor , position : e.target.value}))} className="outline-none h-1"/>
+                   <input type="range" id="position" value={currentPosition} onChange={(e) => dispatch(changePosition({id : selectedColor , position : parseInt(e.target.value , 10)}))} className="outline-none h-1"/>
                 </div>
 
                 <div className="flex flex-col gap-4 mt-4"> 
                    <label className="" htmlFor="degree">Gradient global angle</label>
-                   <input type="range" name="" id="degree" value={inputGlobalDegreeValue} onChange={(e) => dispatch(changeDegree(e.target.value))} className="outline-none h-1"/>
+                   <input type="range" name="" id="degree" value={inputGlobalDegreeValue} onChange={(e) => dispatch(changeDegree(parseInt(e.target.value)))} className="outline-none h-1"/>
                 </div>
 
                 <button className="bg-blue-700 rounded-lg px-6 py-2 text-lg font-bold mt-5 sm:w-1/2" onClick={() => setIsClicked(true)}>
