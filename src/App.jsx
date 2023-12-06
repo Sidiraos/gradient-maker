@@ -43,8 +43,8 @@ function App() {
               </div>
               {/* composant button */}
               <div className="btn-grp flex gap-1 mt-2">
-                <Button type={"-"} />
-                <Button type={"+"}/>
+                <Button type={"-"} selectedColorId= {selectedColor} setSelectedId = {(currentId)=> setSelectedColor(currentId)} />
+                <Button type={"+"} selectedColorId= {selectedColor} setSelectedId = {(currentId)=> setSelectedColor(currentId)}/>
               </div>
 
               <div className="flex flex-col gap-5 mt-5">
